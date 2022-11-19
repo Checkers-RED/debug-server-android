@@ -18,10 +18,10 @@ def start_queue():
     try:
         current_session = request.json["session"]
     except Exception:
-        return make_response("text", 400)
+        return make_response("Wrong session", 400)
 
     # Какой-либо код обработки начала очереди
-    return make_response("text", 200)
+    return make_response("Added in queue", 200)
 
 
 # get /queue
@@ -30,7 +30,7 @@ def check_queue():
     try:
         current_session = request.json["session"]
     except Exception:
-        return make_response("text", 400)
+        return make_response("Wrong session", 400)
 
     # Какой-либо код, обрабатывающий проверку статуса присутствия в очереди
     return make_response("Number in queue", 200)
